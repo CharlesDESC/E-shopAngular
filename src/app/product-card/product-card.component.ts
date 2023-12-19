@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../models/product.model';
+import { MatCardModule } from '@angular/material/card';
+import { ProductService } from '../services/product.service';
+
 import {
   NgFor,
   NgIf,
@@ -12,7 +15,15 @@ import {
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [NgIf, NgFor, NgStyle, UpperCasePipe, CurrencyPipe, DatePipe],
+  imports: [
+    NgIf,
+    NgFor,
+    NgStyle,
+    UpperCasePipe,
+    CurrencyPipe,
+    DatePipe,
+    MatCardModule,
+  ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
 })
@@ -27,11 +38,8 @@ export class ProductCardComponent {
     this.selectedPrice = price;
   }
 
+  constructor(private productService: ProductService) {}
   onAddLike() {
-    if (this.myProduct.isLiked) this.myProduct.likes--;
-    else {
-      this.myProduct.likes++;
-    }
-    this.myProduct.isLiked = !this.myProduct.isLiked;
+    this.productService.onLikeProduct(this.myProduct);
   }
 }

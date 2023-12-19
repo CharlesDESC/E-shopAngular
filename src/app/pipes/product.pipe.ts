@@ -14,3 +14,16 @@ export class SortByDatePipe implements PipeTransform {
     });
   }
 }
+
+@Pipe({
+  name: 'searchProduct',
+  standalone: true,
+})
+export class SearchProductPipe implements PipeTransform {
+  transform(products: Product[], search?: any) {
+    if (!search) return products;
+    return products.filter(product => {
+      return product.title.toLowerCase().includes(search.toLowerCase());
+    });
+  }
+}

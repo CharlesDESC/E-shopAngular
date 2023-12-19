@@ -1,20 +1,30 @@
-<h2>{{ myProduct.title | uppercase }}</h2>
-<img [src]="myProduct.imageUrl" width="100" />
-<p>{{ myProduct.description }}</p>
-<button
-  *ngFor="let size of myProduct.sizes"
-  (click)="updateSelectedSize(size.taille, size.price)">
-  {{ size.taille }}
-</button>
-<div *ngIf="selectedSize">
-  Le prix pour la taille {{ selectedSize }} est :
-  {{ selectedPrice | currency : 'EUR' }}
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{ myProduct.title | uppercase }}
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="myProduct.imageUrl" width="100" />
+  <mat-card-content>
+    <p>{{ myProduct.description }}</p>
+  </mat-card-content>
 
-<div>date d'ajout : {{ myProduct.date | date : 'mediumDate' }}</div>
-<p>
-  <b [ngStyle]="{ color: myProduct.likes > 0 ? 'green' : 'red' }"
-    >{{ myProduct.likes }} ❤️</b
-  >
-  <button (click)="onAddLike()">Like</button>
-</p>
+  <button
+    *ngFor="let size of myProduct.sizes"
+    (click)="updateSelectedSize(size.taille, size.price)">
+    {{ size.taille }}
+  </button>
+
+  <div *ngIf="selectedSize">
+    Le prix pour la taille {{ selectedSize }} est :
+    {{ selectedPrice | currency : 'EUR' }}
+  </div>
+
+  <div>date d'ajout : {{ myProduct.date | date : 'mediumDate' }}</div>
+  <p>
+    <b [ngStyle]="{ color: myProduct.likes > 0 ? 'green' : 'red' }"
+      >{{ myProduct.likes }} ❤️</b
+    >
+    <button (click)="onAddLike()">Like</button>
+  </p>
+</mat-card>
