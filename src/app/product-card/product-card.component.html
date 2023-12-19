@@ -1,0 +1,20 @@
+<h2>{{ myProduct.title | uppercase }}</h2>
+<img [src]="myProduct.imageUrl" width="100" />
+<p>{{ myProduct.description }}</p>
+<button
+  *ngFor="let size of myProduct.sizes"
+  (click)="updateSelectedSize(size.taille, size.price)">
+  {{ size.taille }}
+</button>
+<div *ngIf="selectedSize">
+  Le prix pour la taille {{ selectedSize }} est :
+  {{ selectedPrice | currency : 'EUR' }}
+</div>
+
+<div>date d'ajout : {{ myProduct.date | date : 'mediumDate' }}</div>
+<p>
+  <b [ngStyle]="{ color: myProduct.likes > 0 ? 'green' : 'red' }"
+    >{{ myProduct.likes }} ❤️</b
+  >
+  <button (click)="onAddLike()">Like</button>
+</p>
