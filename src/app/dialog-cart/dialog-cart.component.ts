@@ -1,11 +1,11 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { NgFor } from '@angular/common';
+import { NgFor, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dialog-cart',
   standalone: true,
-  imports: [NgFor],
+  imports: [CommonModule, NgFor],
   templateUrl: './dialog-cart.component.html',
   styleUrls: ['./dialog-cart.component.css'],
 })

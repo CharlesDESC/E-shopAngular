@@ -1,12 +1,14 @@
-<h1 mat-dialog-title>Ma Boîte de Dialogue</h1>
-<div mat-dialog-content>
-  <div class="row" *ngFor="let cartItem of cartItems">
-    <p>{{ cartItem.product.title }}</p>
-    <p>{{ cartItem.quantity }}</p>
+<div class="container">
+  <h1 mat-dialog-title>Panier</h1>
+  <div mat-dialog-content class="row-container">
+    <div class="row" *ngFor="let cartItem of cartItems">
+      <img [src]="cartItem.product.imageUrl" alt="product image" class="img" />
+      <p>{{ cartItem.product.title }}</p>
+      <p>quantité : {{ cartItem.quantity }}</p>
+    </div>
+    <p>total : {{ calculateTotal() | currency : 'EUR' }}</p>
   </div>
-  <p>total :</p>
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Annuler</button>
-  <!-- <button mat-button [mat-dialog-close]="true">OK</button> -->
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+  </div>
 </div>

@@ -27,10 +27,5 @@ export class CartComponent {
         cartItems: this.cartItems,
       },
     });
-
-    // Écoute la fermeture de la boîte de dialogue
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('La boîte de dialogue est fermée', result);
-    });
   }
 }
