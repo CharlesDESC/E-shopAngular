@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ProductService } from '../services/product.service';
 import { CartService } from '../services/add-cart.service';
 import { CartComponent } from '../cart/cart.component';
+import { MatButtonModule } from '@angular/material/button';
 
 import {
   NgFor,
@@ -26,6 +27,7 @@ import {
     DatePipe,
     MatCardModule,
     CartComponent,
+    MatButtonModule,
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',

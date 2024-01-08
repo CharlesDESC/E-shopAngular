@@ -9,25 +9,38 @@
     <p>{{ myProduct.description }}</p>
   </mat-card-content>
 
-  <button
-    *ngFor="let size of myProduct.sizes"
-    (click)="updateSelectedSize(size.taille, size.price)">
-    {{ size.taille }}
-  </button>
+  <div class="sizes-btn-container">
+    <button
+      mat-raised-button
+      class="sizes-btn"
+      *ngFor="let size of myProduct.sizes"
+      (click)="updateSelectedSize(size.taille, size.price)">
+      {{ size.taille }}
+    </button>
+  </div>
 
-  <div *ngIf="selectedSize">
+  <div class="card-price" *ngIf="selectedSize">
     Le prix pour la taille {{ selectedSize }} est :
     {{ selectedPrice | currency : 'EUR' }}
   </div>
 
-  <div>date d'ajout : {{ myProduct.date | date : 'mediumDate' }}</div>
-  <p>
-    <b [ngStyle]="{ color: myProduct.likes > 0 ? 'green' : 'red' }"
-      >{{ myProduct.likes }} ❤️</b
-    >
-    <button (click)="onAddLike()">Like</button>
-  </p>
-  <div *ngIf="selectedSize">
-    <button (click)="onAddToCart()">Ajouter au panier</button>
+  <div class="card-price" *ngIf="selectedSize">
+    <div *ngIf="selectedSize">
+      <button mat-raised-button (click)="onAddToCart()">
+        Ajouter au panier
+      </button>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="card-like">
+      <button mat-raised-button (click)="onAddLike()">Like</button>
+      <b [ngStyle]="{ color: myProduct.likes > 0 ? 'green' : 'red' }"
+        >{{ myProduct.likes }} ❤️</b
+      >
+    </div>
+    <div class="card-date">
+      date d'ajout : {{ myProduct.date | date : 'mediumDate' }}
+    </div>
   </div>
 </mat-card>

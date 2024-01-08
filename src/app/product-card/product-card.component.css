@@ -11,3 +11,37 @@
 .card-header {
   padding: 10px;
 }
+
+.sizes-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.sizes-btn {
+  background-color: darkgrey;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  align-items: end;
+}
+
+.card-date {
+  height: fit-content;
+  width: fit-content;
+  font-size: 12px;
+  color: grey;
+}
+
+.card-like {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+}
