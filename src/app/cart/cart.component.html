@@ -1,10 +1,6 @@
-<div class="card">
-  <button mat-button (click)="onDisplayCart()">afficher le panier</button>
-  <div *ngIf="isShowCart">
-    <div class="row" *ngFor="let cartItem of cartItems">
-      <p>{{ cartItem.product.title }}</p>
-      <p>{{ cartItem.quantity }}</p>
-    </div>
-    <p>total :</p>
-  </div>
+<div class="cart">
+  <img
+    src="../../assets/img/panier.png"
+    class="cart-img"
+    (click)="openDialog()" />
 </div>
