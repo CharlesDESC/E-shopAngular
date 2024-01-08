@@ -16,9 +16,17 @@ export class ProductService {
     }
     product.isLiked = !product.isLiked;
   }
+  // onAddCartProduct(product: Product): void {
+  //   if (product.isAddedCart) product.cart--;
+  //   else {
+  //     product.cart++;
+  //   }
+  //   product.isAddedCart = !product.isAddedCart;
+  // }
 
   products: Product[] = [
     new Product(
+      0,
       'avions',
       "c'est un avion cool",
       'https://www.shutterstock.com/image-illustration/high-detailed-white-airliner-3d-600nw-720019705.jpg',
@@ -32,6 +40,7 @@ export class ProductService {
       new Date('2023-12-19')
     ),
     new Product(
+      1,
       'test filter',
       "c'est un avion cool",
       'https://www.shutterstock.com/image-illustration/high-detailed-white-airliner-3d-600nw-720019705.jpg',
@@ -44,6 +53,7 @@ export class ProductService {
       new Date('2023-12-20')
     ),
     new Product(
+      2,
       'avions',
       "c'est un avion cool",
       'https://www.shutterstock.com/image-illustration/high-detailed-white-airliner-3d-600nw-720019705.jpg',

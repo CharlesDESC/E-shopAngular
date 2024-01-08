@@ -1,5 +1,5 @@
-<mat-card>
-  <mat-card-header>
+<mat-card class="card">
+  <mat-card-header class="card-header">
     <mat-card-title>
       {{ myProduct.title | uppercase }}
     </mat-card-title>
@@ -27,4 +27,7 @@
     >
     <button (click)="onAddLike()">Like</button>
   </p>
+  <div *ngIf="selectedSize">
+    <button (click)="onAddToCart()">Ajouter au panier</button>
+  </div>
 </mat-card>

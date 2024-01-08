@@ -1,17 +1,6 @@
 <main class="main">
-  <div class="haeder">
+  <div class="header">
     <app-header></app-header>
-  </div>
-  <div class="searchFilter">
-    <mat-form-field class="example-full-width">
-      <mat-label>recherche par nom</mat-label>
-      <input
-        matInput
-        type="text"
-        name="search"
-        [(ngModel)]="search"
-        (keyup)="searchProduct()" />
-    </mat-form-field>
   </div>
   <div class="products-list">
     <app-product-card

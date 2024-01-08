@@ -11,6 +11,7 @@ import { SortByDatePipe, SearchProductPipe } from './pipes/product.pipe';
 import { ProductService } from './services/product.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SearchFilterService } from './services/search-filter.service';
 
 @Component({
   selector: 'app-root',
@@ -44,6 +45,7 @@ export class AppComponent implements OnInit {
   title: string = '';
 
   products!: Product[];
+  cart = [];
 
   changerOrder() {
     if (this.order === this.orderAsc) {
@@ -53,15 +55,16 @@ export class AppComponent implements OnInit {
     }
   }
 
-  searchProduct() {
-    console.log('searchProduct');
-  }
-
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private searchFilterService: SearchFilterService
+  ) {}
 
   ngOnInit() {
     this.products = this.productService.products;
-    this.search = '';
     this.title = '';
+    this.searchFilterService.searchChanged.subscribe(search => {
+      this.search = search;
+    });
   }
 }

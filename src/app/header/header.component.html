@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="logo">logo</div>
+  <div class="nav">
+    <p>produit</p>
+    <p>contact</p>
+    <p>panier</p>
+  </div>
+  <div class="searchFilter">
+    <mat-form-field class="example-full-width">
+      <mat-label>recherche par nom</mat-label>
+      <input
+        matInput
+        type="text"
+        name="search"
+        [(ngModel)]="search"
+        (keyup)="onSearchChange()" />
+    </mat-form-field>
+  </div>
+  <div class="switchTheme">
+    <!-- <button mat-button color="dark">
+      <img
+        src="https://img.icons8.com/ios-filled/50/000000/sun.png"
+        (click)="switchTheme()" />
+    </button> -->
+  </div>
+  <div class="cart">
+    <app-cart></app-cart>
+  </div>
+</div>
