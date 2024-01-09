@@ -4,7 +4,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { SearchProductPipe } from '../pipes/product.pipe';
 import { SearchFilterService } from '../services/search-filter.service';
 import { CartComponent } from '../cart/cart.component';
 
@@ -17,7 +16,6 @@ import { CartComponent } from '../cart/cart.component';
     FormsModule,
     MatButtonModule,
     MatIconModule,
-    SearchProductPipe,
     CartComponent,
   ],
   templateUrl: './header.component.html',
@@ -26,12 +24,11 @@ import { CartComponent } from '../cart/cart.component';
 export class HeaderComponent {
   search: string = '';
 
-  constructor(private SearchFilterService: SearchFilterService) {}
+  constructor(private searchFilterService: SearchFilterService) {}
 
   onSearchChange(): void {
     console.log(this.search);
-    this.SearchFilterService.emitSearchChanged(this.search);
-    console.log(SearchFilterService);
+    this.searchFilterService.emitSearchChanged(this.search);
   }
 
   switchTheme(): void {

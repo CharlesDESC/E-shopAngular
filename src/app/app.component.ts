@@ -12,6 +12,7 @@ import { ProductService } from './services/product.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchFilterService } from './services/search-filter.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { SearchFilterService } from './services/search-filter.service';
     SortByDatePipe,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
     FormsModule,
     SearchProductPipe,
     ProductCardComponent,

@@ -10,8 +10,9 @@
       "
       [myProduct]="product"></app-product-card>
   </div>
-  <button (click)="changerOrder()">trié par ordre {{ order }}</button>
-  <div>{{ search }}</div>
+  <button mat-raised-button (click)="changerOrder()">
+    trié par ordre {{ order }}
+  </button>
 </main>
 
 <router-outlet></router-outlet>
