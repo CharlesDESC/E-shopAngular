@@ -1,8 +1,14 @@
-<div *ngFor="let cartItem of cartItems">
-  <div>
-    <p>{{ cartItem.product.title }}</p>
-    <p>{{ cartItem.product.description }}</p>
-    <p>{{ cartItem.product.price }}</p>
-  </div>
-  <div>{{ cartItem.quantity }}</div>
+<div *ngFor="let cartItem of cartItems" class="card-container">
+  <mat-card class="product-card">
+    <mat-card-header>
+      <mat-card-title>{{ cartItem.product.title }}</mat-card-title>
+      <mat-card-subtitle>{{ cartItem.product.price }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ cartItem.product.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="quantity">Quantité: {{ cartItem.quantity }}</div>
+    </mat-card-actions>
+  </mat-card>
 </div>
