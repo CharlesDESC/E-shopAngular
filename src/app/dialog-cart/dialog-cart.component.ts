@@ -24,7 +24,7 @@ export class DialogCartComponent {
 
   calculateTotal(): number {
     return this.cartItems.reduce((total, cartItem) => {
-      return total + cartItem.selectedPrice * cartItem.quantity;
+      return total + cartItem.product.selectedPrice * cartItem.quantity;
     }, 0);
   }
 
