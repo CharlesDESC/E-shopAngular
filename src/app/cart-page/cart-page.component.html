@@ -1,0 +1,8 @@
+<div *ngFor="let cartItem of cartItems">
+  <div>
+    <p>{{ cartItem.product.title }}</p>
+    <p>{{ cartItem.product.description }}</p>
+    <p>{{ cartItem.product.price }}</p>
+  </div>
+  <div>{{ cartItem.quantity }}</div>
+</div>

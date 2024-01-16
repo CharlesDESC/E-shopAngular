@@ -16,13 +16,6 @@ export class ProductService {
     }
     product.isLiked = !product.isLiked;
   }
-  // onAddCartProduct(product: Product): void {
-  //   if (product.isAddedCart) product.cart--;
-  //   else {
-  //     product.cart++;
-  //   }
-  //   product.isAddedCart = !product.isAddedCart;
-  // }
 
   products: Product[] = [
     new Product(

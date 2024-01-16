@@ -24,11 +24,13 @@ export class DialogCartComponent {
 
   calculateTotal(): number {
     return this.cartItems.reduce((total, cartItem) => {
-      return total + cartItem.product.price * cartItem.quantity;
+      return total + cartItem.selectedPrice * cartItem.quantity;
     }, 0);
   }
 
-  closeDialog(): void {
+  redirectToCartPage(): void {
+    console.log(this.cartItems);
+    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
     this.dialogRef.close();
   }
 }

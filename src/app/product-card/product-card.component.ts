@@ -53,12 +53,10 @@ export class ProductCardComponent {
   }
 
   onAddToCart() {
+    this.myProduct.selectedSize = this.selectedSize;
+    this.myProduct.selectedPrice = this.selectedPrice;
     console.log(this.myProduct);
-    console.log(
-      this.myProduct.sizes.find(item => item.taille === this.selectedSize)
-        ?.taille
-    );
+
     this.cartService.addToCart(this.myProduct);
-    console.log(this.cartService.getCartItems());
   }
 }

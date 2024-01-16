@@ -7,7 +7,8 @@ export class Product {
     public likes: number,
     public isLiked: boolean,
     public sizes: { taille: string; price: number }[],
-    public date: Date // public cart: number,
-  ) // public isAddedCart: boolean
-  {}
+    public date: Date,
+    public selectedSize?: string,
+    public selectedPrice?: number
+  ) {}
 }
