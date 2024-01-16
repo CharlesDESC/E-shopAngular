@@ -4,6 +4,8 @@
     <div class="row" *ngFor="let cartItem of cartItems">
       <img [src]="cartItem.product.imageUrl" alt="product image" class="img" />
       <p>{{ cartItem.product.title }}</p>
+      <p>taille: {{ cartItem.product.selectedSize }}</p>
+
       <p>quantité : {{ cartItem.quantity }}</p>
     </div>
     <p>total : {{ calculateTotal() | currency : 'EUR' }}</p>

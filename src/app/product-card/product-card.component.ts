@@ -53,10 +53,11 @@ export class ProductCardComponent {
   }
 
   onAddToCart() {
-    this.myProduct.selectedSize = this.selectedSize;
-    this.myProduct.selectedPrice = this.selectedPrice;
-    console.log(this.myProduct);
+    let newProductToAdd = { ...this.myProduct };
 
-    this.cartService.addToCart(this.myProduct);
+    newProductToAdd.selectedSize = this.selectedSize;
+    newProductToAdd.selectedPrice = this.selectedPrice;
+
+    this.cartService.addToCart(newProductToAdd);
   }
 }
