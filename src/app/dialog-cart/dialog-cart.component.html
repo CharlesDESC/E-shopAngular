@@ -1,19 +1,18 @@
 <div class="container">
-  <h1 mat-dialog-title>Panier</h1>
-  <div mat-dialog-content class="row-container">
+  <h1 class="dialog-title">Panier</h1>
+  <mat-dialog-content class="row-container">
     <div class="row" *ngFor="let cartItem of cartItems">
-      <img [src]="cartItem.product.imageUrl" alt="product image" class="img" />
-      <p>{{ cartItem.product.title }}</p>
-      <p>taille: {{ cartItem.product.selectedSize }}</p>
-
-      <p>quantité : {{ cartItem.quantity }}</p>
+      <img [src]="cartItem.product.imageUrl" alt="product image" class="product-image" />
+      <div class="product-details">
+        <p class="product-title">{{ cartItem.product.title }}</p>
+        <p class="product-size">Taille: {{ cartItem.product.selectedSize }}</p>
+        <p class="product-quantity">Quantité : {{ cartItem.quantity }}</p>
+      </div>
     </div>
-    <p>total : {{ calculateTotal() | currency : 'EUR' }}</p>
-  </div>
-  <div mat-dialog-actions>
+    <p class="total-price">Total : {{ calculateTotal() | currency : 'EUR' }}</p>
+  </mat-dialog-content>
+  <mat-dialog-actions class="dialog-actions">
     <button mat-button mat-dialog-close>Annuler</button>
-    <button mat-button [routerLink]="['/cart']" (click)="redirectToCartPage()">
-      Valider
-    </button>
-  </div>
+    <button mat-button [routerLink]="['/cart']" (click)="redirectToCartPage()">Valider</button>
+  </mat-dialog-actions>
 </div>
