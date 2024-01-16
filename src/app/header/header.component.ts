@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchFilterService } from '../services/search-filter.service';
 import { CartComponent } from '../cart/cart.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ import { CartComponent } from '../cart/cart.component';
     MatButtonModule,
     MatIconModule,
     CartComponent,
+    RouterLink,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
@@ -30,6 +32,11 @@ export class HeaderComponent {
     console.log(this.search);
     this.searchFilterService.emitSearchChanged(this.search);
   }
+
+  // navigate(): void {
+  //   this.router.navigate(['/']);
+  //   this.dialogRef.close();
+  // }
 
   switchTheme(): void {
     console.log('switchTheme');

@@ -1,0 +1,12 @@
+<div class="products-list">
+  <app-product-card
+    class="product-card"
+    *ngFor="
+      let product of products | sortByDate : order | searchProduct : search
+    "
+    [myProduct]="product"></app-product-card>
+</div>
+
+<button mat-raised-button (click)="changerOrder()">
+  trié par ordre {{ order }}
+</button>

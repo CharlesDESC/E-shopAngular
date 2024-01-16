@@ -10,5 +10,8 @@
   </div>
   <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button [routerLink]="['/cart']" (click)="closeDialog()">
+      Valider
+    </button>
   </div>
 </div>

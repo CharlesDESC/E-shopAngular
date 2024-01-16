@@ -38,35 +38,4 @@ import { MatButtonModule } from '@angular/material/button';
     },
   ],
 })
-export class AppComponent implements OnInit {
-  orderAsc: string = 'asc';
-  orderDesc: string = 'desc';
-  order: string = 'asc';
-
-  search: string = '';
-  title: string = '';
-
-  products!: Product[];
-  cart = [];
-
-  changerOrder() {
-    if (this.order === this.orderAsc) {
-      this.order = this.orderDesc;
-    } else {
-      this.order = this.orderAsc;
-    }
-  }
-
-  constructor(
-    private productService: ProductService,
-    private searchFilterService: SearchFilterService
-  ) {}
-
-  ngOnInit() {
-    this.products = this.productService.products;
-    this.title = '';
-    this.searchFilterService.searchChanged.subscribe(search => {
-      this.search = search;
-    });
-  }
-}
+export class AppComponent {}

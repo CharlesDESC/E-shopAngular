@@ -1,0 +1,17 @@
+.test {
+  background-color: darksalmon;
+  color: lightsalmon;
+}
+
+.products-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.product-card {
+  width: 300px;
+  height: 350px;
+  margin: 10px;
+}
