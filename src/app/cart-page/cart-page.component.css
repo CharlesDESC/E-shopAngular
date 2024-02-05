@@ -6,3 +6,11 @@
   padding: 20px;
   width: '100%';
 }
+.product-card {
+  margin: 10px;
+  width: 300px;
+}
+
+/* .button {
+  width: 100%;
+} */

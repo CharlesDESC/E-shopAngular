@@ -10,22 +10,18 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './cart-page.component.css',
 })
 export class CartPageComponent implements OnInit {
+  total = 0;
   cartItems: any;
   ngOnInit(): void {
     this.cartItems = JSON.parse(localStorage.getItem('cartItems') ?? '');
+    this.totalPrice();
   }
 
   removeFromCart(index: number) {
     this.cartItems.splice(index, 1);
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
-  }
 
-  getTotalPrice() {
-    let total = 0;
-    for (let i = 0; i < this.cartItems.length; i++) {
-      total += this.cartItems[i].product.price * this.cartItems[i].quantity;
-    }
-    return total;
+    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+    this.totalPrice();
   }
 
   validateCart() {
@@ -33,6 +29,15 @@ export class CartPageComponent implements OnInit {
       return false;
     } else {
       return true;
+    }
+  }
+
+  totalPrice() {
+    this.total = 0;
+    for (let i = 0; i < this.cartItems.length; i++) {
+      this.total +=
+        parseInt(this.cartItems[i].product.selectedPrice) *
+        parseInt(this.cartItems[i].quantity);
     }
   }
 }
