@@ -14,4 +14,18 @@
       <div class="quantity">Quantité: {{ cartItem.quantity }}</div>
     </mat-card-actions>
   </mat-card>
+  <div class="remove-button">
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="removeFromCart(cartItem.product)">
+      Supprimer
+    </button>
+    <div class="total-price">
+      Total: {{ cartItem.product.selectedPrice * cartItem.quantity }} €
+    </div>
+    <button mat-raised-button color="primary" (click)="validateCart()">
+      Valider
+    </button>
+  </div>
 </div>
