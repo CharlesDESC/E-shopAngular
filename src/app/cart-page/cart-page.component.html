@@ -10,8 +10,25 @@
     <mat-card-content>
       <p>{{ cartItem.product.description }}</p>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="button">
       <div class="quantity">Quantité: {{ cartItem.quantity }}</div>
+      <div class="remove-button">
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="removeFromCart(cartItem.product)">
+          Supprimer
+        </button>
+        <div class="total-price">
+          Total: {{ cartItem.product.selectedPrice * cartItem.quantity }} €
+        </div>
+      </div>
     </mat-card-actions>
   </mat-card>
+</div>
+<div>
+  <div class="total-price">Total: {{ total }} €</div>
+  <button mat-raised-button color="primary" (click)="validateCart()">
+    Valider
+  </button>
 </div>
